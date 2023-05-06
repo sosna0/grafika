@@ -1,0 +1,14 @@
+
+.button{
+    background-color:rgb(7, 83, 235);
+    border-radius: 8px;
+    text-align: center;
+    font-size: medium;
+    padding: 10px 10px 10px 10px;
+    display:block;
+    transition-duration: 0.3s;
+}
+
+.button:hover{
+    background-color: rgb(92, 198, 254);
+}
