@@ -22,7 +22,8 @@ const fragmentShaderTxt = `
         gl_FragColor = vec4(fragColor, 1.0); // R,G,B, opacity
     }
 `
-var a, b, c;
+
+let a, b, c;
 
 let RandomColors = function(){
     a = Math.random();
@@ -38,7 +39,7 @@ let Triangle = function () {
         alert('webgl not supported');
     }
 
-    gl.clearColor(0.950, 0.703, 0.276, 0.95);  // R,G,B, opacity
+    gl.clearColor(0.455, 0.865, 0.990, 0.95);  // R,G,B, opacity
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     let vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -66,7 +67,7 @@ let Triangle = function () {
     gl.validateProgram(program);
     
     
-    let a = 0.5;
+    let x = 0.5;
     let height = Math.sqrt(3)*0.5;
 
     RandomColors();
@@ -82,22 +83,21 @@ let Triangle = function () {
         -0.4, 0.4,          1.0, a, a,
         
         //Hexagon made with 4triangles:
-        -a/2, a*height,     1.0, b, c*0.5,
-        -a/2, -a*height,    a, b, c,
-        a, 0,               a, b, c,
+        -x/2, x*height,     1.0, b, c*0.5,
+        -x/2, -x*height,    a, b, c,
+        x, 0,               a, b, c,
 
-        -a/2, a*height,     1.0, b, c*0.5,
-        -a, 0,              a, b, c,
-        -a/2, -a*height,    a, b, c,
+        -x/2, x*height,     1.0, b, c*0.5,
+        -x, 0,              a, b, c,
+        -x/2, -x*height,    a, b, c,
 
-        a/2, -a*height,     1.0, b, c*0.5,
-        a, 0,               a, b, c,
-        -a/2, -a*height,    a, b, c,
+        x/2, -x*height,     1.0, b, c*0.5,
+        x, 0,               a, b, c,
+        -x/2, -x*height,    a, b, c,
                        
-        
-        -a/2, a*height,     1.0, b, c*0.5,
-        a/2, a*height,      a, b, c,
-        a, 0,               a, b, c,
+        -x/2, x*height,     1.0, b, c*0.5,
+        x/2, x*height,      a, b, c,
+        x, 0,               a, b, c,
 
     ]
 
